@@ -14,15 +14,15 @@ from telethon import TelegramClient, events
 api_id = "3463304" # copy from my.telegram.org website
 api_hash = '8ecafca60e2b5a867a15a3b0bbe7c347' # copy from the my.telegram.org website
 phone = '+251973791994' # your phone number 
-username = 'NuhaminEl'  # your username
-#password = 'YOUR_PASSWORD'  #  use password if you have two-step verification enabled
-
-# Message of the auto reply 
-reply_msg = input("Enter your event:")
+# username = 'NuhaminEl'  # your username
+# password = 'YOUR_PASSWORD'  #  use password if you have two-step verification enabled
 
 # Step 3: Instantiat the client object and establish the client connection
 # use sequential_updates=True to respond to messages one at a time
-client = TelegramClient(username, api_id, api_hash, sequential_updates=True).start(phone)
+client = TelegramClient(phone, api_id, api_hash, sequential_updates=True).start()
+
+# Message of the auto reply 
+reply_msg = input("Enter your event:")
 
 # Step 4: Define async main method
 async def main():
@@ -61,7 +61,7 @@ async def main():
 # the below code printing the start time
 print(time.asctime(), '-', 'Auto-replying...')
 
-# Step 5: Establish the client connection
+# Step 5: The client run until disconnected
 with client:
     # the clien run untile completed
     client.loop.run_until_complete(main())
