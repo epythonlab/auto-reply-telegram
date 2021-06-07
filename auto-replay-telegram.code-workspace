@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"path": "../scraping telegram"
+		},
+		{
+			"path": ".."
+		},
+		{
+			"name": "auto-reply-telegram",
+			"path": "."
+		}
+	],
+	"settings": {}
+}
